@@ -1,0 +1,6 @@
+{
+    "require": {
+        "ck/php-marcspec": "dev-master",
+        "justinrainbow/json-schema": "1.4.*@dev"
+    }
+}
