@@ -79,7 +79,7 @@ if(isset($_GET['spec']))
     </head>
     <body>
         <h1><img src="marcspec-logo.png">MARCspec Validator</h1>
-        <p>See <a href="http://cklee.github.io/marc-spec/">http://cklee.github.io/marc-spec/</a> for current specification.</p>
+        <p>See <a href="http://marcspec.github.io/MARCspec/">http://marcspec.github.io/MARCspec/</a> for current specification.</p>
         <form method="GET" action="">
             <input type="text" name="spec" size="60" style="font-size:1.3em;" id="input" value="<?php if(isset($_GET['spec'])) echo $_GET['spec']; ?>"/>
             <input type="submit" value="validate!" style="font-size:1.3em;" id="submit" />
@@ -135,6 +135,37 @@ if(isset($_GET['spec']))
                 ?>
         
         <div style="font-size:0.5em;position:relative; bottom:5px;">
+        <p>
+        <form method="GET" action="">
+        Examples:
+            <select name="spec" size="1" onchange="this.form.submit()">
+            <option></option>
+            <option>245</option>
+            <option>LDR</option>
+            <option>LDR/0-3</option>
+            <option>LDR/0-#</option>
+            <option>LDR/#-4</option>
+            <option>LDR/#-0</option>
+            <option>245[1]</option>
+            <option>245[1-3]</option>
+            <option>245[1-#]</option>
+            <option>245[#-3]</option>
+            <option>245/#</option>
+            <option>245/#-#</option>
+            <option>245/#-0</option>
+            <option>245/#-1</option>
+            <option>245/0-#</option>
+            <option>245_0</option>
+            <option>245__0</option>
+            <option>245_0_</option>
+            <option>245[1]_01</option>
+            <option>245$a-c</option>
+            <option>...[#]/1-3</option>
+            <option>245$d{$c/#=\.}{?$a}</option>
+            <option>245[0]{$a!=$b|300_01$a!~\abc}{\!\=!=\!}$a{$c|!$d}</option>
+            <option>245$a-c{$b|$c}{$e}</option>
+            </select>
+        </p>
         <hr>
         Author: Carsten Klee<br>
         <a href="https://github.com/MARCspec/php-marc-spec/archive/master.zip">Download</a> current version of MARCspec parser and validator (written in PHP)<br>
